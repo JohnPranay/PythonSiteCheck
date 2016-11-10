@@ -7,7 +7,7 @@ from email.MIMEText import MIMEText
 c = httplib.HTTPConnection('www.site.com')
 c.request("HEAD", '')
 if c.getresponse().status == 200:
-    kod = "Site www.site.com not working."
+    koding = "Site www.site.com not working."
 else:
 	sys.exit()
 from_address = "my@mail.com"
@@ -17,7 +17,7 @@ msg['From'] = from_address
 msg['To'] = to_address
 msg['Subject'] = "Test if site is up"
 
-msg.attach(MIMEText(kod, 'plain'))
+msg.attach(MIMEText(koding, 'plain'))
 
 smtp_server = smtplib.SMTP('smtp.gmail.com', 587)
 smtp_server.starttls()
